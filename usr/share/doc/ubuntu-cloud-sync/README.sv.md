@@ -9,7 +9,7 @@ En prototyp med ett GTK-fönster och statusmärken i GNOME Filer. Varje leverant
 Kör följande i mappen där installationspaketet finns.
 
 ```sh
-sudo apt install ./ubuntu-cloud-sync_0.4.1_all.deb
+sudo apt install ./ubuntu-cloud-sync_0.4.2_all.deb
 nautilus -q
 ubuntu-cloud-sync
 ```
@@ -51,14 +51,4 @@ separat inloggning. GNOME Nätkonton har inget stöd för iCloud Drive.
 
 GNOME Cloud Sync omfattas av GPL-3.0-or-later. Se `COPYING`.
 
-## Importera från iPhone via USB
-
-Anslut en upplåst iPhone med en USB-datakabel. Tryck på **Lita på** om du får
-frågan på telefonen. Öppna **Importera från iPhone** i GNOME Cloud Sync.
-Välj telefonen och en lokal målmapp och starta sedan importen.
-
-Programmet kopierar bilder och videor från telefonens DCIM-mapp. En fil med
-samma namn och innehåll hoppas över. Om två filer har samma namn men olika
-innehåll sparas båda. Välj en lokal mapp på ett filsystem som stöder hårda
-länkar, till exempel ext4. Om iCloud-bilder optimerar lagringen kan vissa
-original behöva hämtas till telefonen först. Originalen lämnas kvar på telefonen.
+För USB-import från iPhone, se [den separata appen](../iphone-import/README.sv.md).

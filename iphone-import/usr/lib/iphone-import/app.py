@@ -8,9 +8,15 @@ from tempfile import NamedTemporaryFile
 from threading import Thread
 from urllib.parse import urlsplit
 
+import gettext
+
+import gi
+
+gi.require_version("Gtk", "4.0")
 from gi.repository import Gio, GLib, Gtk
 
-from i18n import _ as translate
+locale_dir = Path(__file__).resolve().parents[2] / "share/locale"
+translate = gettext.translation("iphone-import", localedir=locale_dir, fallback=True).gettext
 
 MEDIA = {".heic", ".heif", ".jpg", ".jpeg", ".png", ".gif", ".tif", ".tiff",
          ".dng", ".mov", ".mp4", ".m4v", ".avi", ".webp", ".avif"}
@@ -85,11 +91,10 @@ def import_file(source, name, destination, cancellable):
     return False
 
 
-class ImportWindow(Gtk.Window):
-    def __init__(self, parent):
-        super().__init__(transient_for=parent, application=parent.get_application(),
-                         title=translate("Import from iPhone"), default_width=510,
-                         hide_on_close=True)
+class ImportWindow(Gtk.ApplicationWindow):
+    def __init__(self, application):
+        super().__init__(application=application, title=translate("Import from iPhone"),
+                         default_width=510)
         self.monitor = Gio.VolumeMonitor.get()
         self.devices = []
         self.destination = None
@@ -109,18 +114,26 @@ class ImportWindow(Gtk.Window):
             label=translate("No iPhone detected. Try reconnecting it while it is unlocked."),
             xalign=0, wrap=True)
         panel.append(self.no_device)
+        self.browse = self.button(panel, translate("Browse iPhone in Files"), self.browse_device)
         self.location = Gtk.Label(xalign=0, selectable=True, wrap=True)
         panel.append(self.location)
-        self.choose = parent.button(panel, translate("Choose destination"), self.choose_destination)
-        self.import_button = parent.button(panel, translate("Import photos and videos"), self.start_import)
-        self.cancel = parent.button(panel, translate("Cancel import"), self.cancel_import)
-        self.open = parent.button(panel, translate("Open destination"), self.open_destination)
+        self.choose = self.button(panel, translate("Choose destination"), self.choose_destination)
+        self.import_button = self.button(panel, translate("Import photos and videos"), self.start_import)
+        self.cancel = self.button(panel, translate("Cancel import"), self.cancel_import)
+        self.open = self.button(panel, translate("Open destination"), self.open_destination)
         self.status = Gtk.Label(xalign=0, wrap=True, selectable=True)
         panel.append(self.status)
         for signal in ("volume-added", "volume-removed", "volume-changed"):
             self.monitor.connect_object(signal, self.refresh_devices, self)
         self.connect("close-request", self.close_window)
         self.refresh_devices()
+
+    @staticmethod
+    def button(panel, label, callback):
+        button = Gtk.Button(label=label)
+        button.connect("clicked", callback)
+        panel.append(button)
+        return button
 
     def refresh_devices(self, *_):
         selected = self.device.get_selected()
@@ -145,8 +158,9 @@ class ImportWindow(Gtk.Window):
         busy = self.cancellable is not None
         self.choose.set_sensitive(not busy)
         self.device.set_sensitive(not busy)
-        self.import_button.set_sensitive(not busy and self.destination is not None
-                                         and self.device.get_selected() < len(self.devices))
+        has_device = self.device.get_selected() < len(self.devices)
+        self.browse.set_sensitive(not busy and has_device)
+        self.import_button.set_sensitive(not busy and has_device and self.destination is not None)
         self.cancel.set_visible(busy)
         self.open.set_sensitive(self.destination is not None)
         self.location.set_text(str(self.destination) if self.destination else
@@ -168,21 +182,47 @@ class ImportWindow(Gtk.Window):
             if not error.matches(Gtk.dialog_error_quark(), Gtk.DialogError.DISMISSED):
                 self.status.set_text(translate("Could not select the destination folder."))
 
+    def browse_device(self, *_):
+        self.connect_device(self.browse_mounted)
+
     def start_import(self, *_):
+        self.connect_device(self.import_mounted)
+
+    def connect_device(self, callback):
         source = Gio.File.new_for_uri(self.devices[self.device.get_selected()][1])
         self.cancellable = Gio.Cancellable()
         self.update_buttons()
         self.status.set_text(translate("Connecting to iPhone…"))
         source.mount_enclosing_volume(Gio.MountMountFlags.NONE, Gtk.MountOperation.new(self),
-                                      self.cancellable, self.mount_finished)
+                                      self.cancellable, callback)
 
-    def mount_finished(self, source, result):
+    def mount_device(self, source, result):
         try:
             source.mount_enclosing_volume_finish(result)
         except GLib.Error as error:
             if not error.matches(Gio.io_error_quark(), Gio.IOErrorEnum.ALREADY_MOUNTED):
-                self.finish_import(0, 0, error)
-                return
+                raise
+
+    def browse_mounted(self, source, result):
+        try:
+            self.mount_device(source, result)
+            Gio.AppInfo.launch_default_for_uri(source.get_uri(), self.cancellable)
+            self.status.set_text("")
+        except GLib.Error as error:
+            if self.cancellable.is_cancelled():
+                self.status.set_text("")
+            else:
+                self.status.set_text(error.message)
+        finally:
+            self.cancellable = None
+            self.update_buttons()
+
+    def import_mounted(self, source, result):
+        try:
+            self.mount_device(source, result)
+        except GLib.Error as error:
+            self.finish_import(0, 0, error)
+            return
         Thread(target=self.copy_media, args=(source.get_child("DCIM"), self.destination,
                                             self.cancellable), daemon=True).start()
 
@@ -234,3 +274,14 @@ class ImportWindow(Gtk.Window):
             Gio.AppInfo.launch_default_for_uri(self.destination.as_uri(), None)
         except GLib.Error:
             self.status.set_text(translate("Could not open the destination folder."))
+
+
+def main():
+    application = Gtk.Application(application_id="io.github.yeager.IPhoneImport")
+    application.connect("activate", lambda app: (
+        app.get_active_window() or ImportWindow(app)).present())
+    return application.run()
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
