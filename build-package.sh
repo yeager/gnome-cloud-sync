@@ -22,4 +22,3 @@ build_package() {
 }
 
 build_package "$source_dir" ubuntu-cloud-sync
-build_package "$source_dir/iphone-import" iphone-import

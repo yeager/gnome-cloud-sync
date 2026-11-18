@@ -1,5 +1,0 @@
-# iPhone-import
-
-Anslut en upplåst iPhone med en USB-datakabel. Tryck på **Lita på** om telefonen frågar. Öppna GNOME Filer och välj telefonen bland enheterna i sidofältet för att bläddra bland de filer som telefonen delar via USB. Du kan också öppna **iPhone-import**, välja telefonen och klicka på **Visa iPhone i Filer**.
-
-För att kopiera bilder och videor från telefonens DCIM-mapp, välj en lokal målmapp i **iPhone-import** och klicka på **Importera bilder och videor**. Identiska filer hoppas över. Filer med samma namn och olika innehåll sparas båda. Importen lämnar originalen kvar på telefonen. Målfilsystemet behöver stöd för hårda länkar, som ext4.

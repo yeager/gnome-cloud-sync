@@ -6,6 +6,8 @@ En prototyp med ett GTK-fönster och statusmärken i GNOME Filer. Varje leverant
 
 ## Installera och öppna
 
+Bygg paketet med `./build-package.sh .` (kräver `gettext` och `dpkg-deb`).
+
 Kör följande i mappen där installationspaketet finns.
 
 ```sh
@@ -51,4 +53,4 @@ separat inloggning. GNOME Nätkonton har inget stöd för iCloud Drive.
 
 GNOME Cloud Sync omfattas av GPL-3.0-or-later. Se `COPYING`.
 
-För USB-import från iPhone, se [den separata appen](../iphone-import/README.sv.md).
+För USB-import från iPhone, se [den separata appen](https://github.com/yeager/iphone-import/blob/main/README.sv.md).

@@ -9,6 +9,8 @@ Two-way sync propagates edits and deletions.
 
 ## Install and run
 
+Build the package with `./build-package.sh .` (requires `gettext` and `dpkg-deb`).
+
 From the directory with the package:
 
 ```sh
@@ -89,4 +91,4 @@ engine sign-in. GNOME Online Accounts has no iCloud Drive provider.
 
 GNOME Cloud Sync is licensed under GPL-3.0-or-later. See `COPYING`.
 
-For iPhone USB import, see the [separate iPhone Import app](../iphone-import/README.md).
+For iPhone USB import, see the [separate iPhone Import app](https://github.com/yeager/iphone-import/blob/main/README.md).
