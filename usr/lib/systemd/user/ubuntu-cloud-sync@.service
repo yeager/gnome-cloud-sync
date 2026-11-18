@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 [Unit]
-Description=Ubuntu Cloud Sync (%i)
+Description=GNOME Cloud Sync (%i)
 
 [Service]
 Type=exec

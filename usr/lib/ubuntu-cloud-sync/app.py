@@ -13,6 +13,7 @@ gi.require_version("Gtk", "4.0")
 from gi.repository import Gio, GLib, Gtk
 
 from i18n import _ as translate
+from iphone import ImportWindow
 from common import PROVIDERS, folder, state, status, write_private
 
 def launch(uri):
@@ -21,8 +22,9 @@ def launch(uri):
 
 class Setup(Gtk.ApplicationWindow):
     def __init__(self, app):
-        super().__init__(application=app, title="Ubuntu Cloud Sync", default_width=600)
+        super().__init__(application=app, title="GNOME Cloud Sync", default_width=600)
         self.auth = None
+        self.iphone_window = None
         self.job = None
         self.notice = ""
         self.volumes = Gio.VolumeMonitor.get()
@@ -60,6 +62,7 @@ class Setup(Gtk.ApplicationWindow):
         self.online.append(online_actions)
         self.browse_online = self.button(online_actions, translate("Browse cloud files"), self.open_online)
         self.button(online_actions, translate("Online Accounts settings"), self.open_online_settings)
+        self.button(panel, translate("Import from iPhone"), self.open_iphone_import)
         self.providers.connect("notify::selected", self.change_provider)
         self.connect("close-request", self.close_window)
         self.change_provider()
@@ -82,7 +85,16 @@ class Setup(Gtk.ApplicationWindow):
         self.entry.set_placeholder_text(translate("Cloud folder name, e.g. Ubuntu Sync Test"))
         self.refresh()
 
+    def open_iphone_import(self, *_):
+        if self.iphone_window is None:
+            self.iphone_window = ImportWindow(self)
+        self.iphone_window.refresh_devices()
+        self.iphone_window.present()
+
     def close_window(self, *_):
+        if self.iphone_window and self.iphone_window.cancellable:
+            self.iphone_window.present()
+            return True
         if self.auth:
             self.cancel_auth()
         return False

@@ -1,4 +1,6 @@
-# Ubuntu Cloud Sync
+# GNOME Cloud Sync
+
+An independent prototype for the GNOME desktop.
 
 An experimental GTK 4 control panel and Nautilus extension for OneDrive, Google
 Drive, and iCloud Drive. Each provider has its own settings, credentials, local
@@ -10,7 +12,7 @@ Two-way sync propagates edits and deletions.
 From the directory with the package:
 
 ```sh
-sudo apt install ./ubuntu-cloud-sync_0.3.3_all.deb
+sudo apt install ./ubuntu-cloud-sync_0.4.1_all.deb
 nautilus -q
 ubuntu-cloud-sync
 ```
@@ -85,4 +87,18 @@ engine sign-in. GNOME Online Accounts has no iCloud Drive provider.
 
 ## License
 
-Ubuntu Cloud Sync is licensed under GPL-3.0-or-later. See `COPYING`.
+GNOME Cloud Sync is licensed under GPL-3.0-or-later. See `COPYING`.
+
+## iPhone USB import
+
+Connect and unlock an iPhone with a USB data cable. Tap **Trust** on the phone
+if prompted. Open **Import from iPhone** in GNOME Cloud Sync, choose the
+device and a local destination folder, then start the import.
+
+The importer copies photos and videos exposed under the phone's DCIM folder.
+If a destination already contains a file with the same name and contents,
+it is skipped. A different file with the same name is preserved alongside it.
+Choose a local folder on a filesystem that supports hard links, such as ext4,
+so finished files can be created without overwriting existing files.
+If iCloud Photos uses Optimize Storage, some originals may first need to be
+downloaded to the phone. USB import leaves the files on the phone intact.

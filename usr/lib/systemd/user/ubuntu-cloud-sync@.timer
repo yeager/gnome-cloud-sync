@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 [Unit]
-Description=Run Ubuntu Cloud Sync periodically (%i)
+Description=Run GNOME Cloud Sync periodically (%i)
 
 [Timer]
 OnActiveSec=5min

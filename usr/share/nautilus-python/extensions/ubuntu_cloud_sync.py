@@ -43,7 +43,7 @@ class UbuntuCloudSync(GObject.GObject, Nautilus.InfoProvider, Nautilus.MenuProvi
         if len(files) != 1 or not self.provider(files[0]):
             return []
         item = Nautilus.MenuItem(name="UbuntuCloudSync::status", label=_("Cloud Sync Status"),
-                                 tip=_("Open Ubuntu Cloud Sync"))
+                                 tip=_("Open GNOME Cloud Sync"))
         item.connect("activate", lambda *_: Gio.AppInfo.create_from_commandline(
             "ubuntu-cloud-sync", None, Gio.AppInfoCreateFlags.NONE).launch([], None))
         return [item]

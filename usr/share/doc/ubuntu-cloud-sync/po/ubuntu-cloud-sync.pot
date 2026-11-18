@@ -1,14 +1,14 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Translations template for Ubuntu Cloud Sync.
+# Translations template for GNOME Cloud Sync.
 # Copyright (C) 2026 ORGANIZATION
-# This file is distributed under the same license as the Ubuntu Cloud Sync
+# This file is distributed under the same license as the GNOME Cloud Sync
 # project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Ubuntu Cloud Sync 0.3.2\n"
+"Project-Id-Version: GNOME Cloud Sync 0.4.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-11-18 07:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -123,7 +123,7 @@ msgstr ""
 msgid "Cloud Sync Status"
 msgstr ""
 
-msgid "Open Ubuntu Cloud Sync"
+msgid "Open GNOME Cloud Sync"
 msgstr ""
 
 msgid "The configured local folder is missing."
@@ -197,5 +197,50 @@ msgid "Browse cloud files"
 msgstr ""
 
 msgid "Online Accounts settings"
+msgstr ""
+
+msgid "Import from iPhone"
+msgstr ""
+
+msgid ""
+"Connect and unlock your iPhone. Tap Trust if prompted. Import copies "
+"photos and videos and leaves originals on your iPhone."
+msgstr ""
+
+msgid "No iPhone detected. Try reconnecting it while it is unlocked."
+msgstr ""
+
+msgid "Choose destination"
+msgstr ""
+
+msgid "Import photos and videos"
+msgstr ""
+
+msgid "Cancel import"
+msgstr ""
+
+msgid "Open destination"
+msgstr ""
+
+msgid "Choose a local folder for imported files."
+msgstr ""
+
+msgid "Could not select the destination folder."
+msgstr ""
+
+msgid "Connecting to iPhone…"
+msgstr ""
+
+#, python-brace-format
+msgid "Imported: {imported} · Duplicates skipped: {skipped}"
+msgstr ""
+
+msgid "Import cancelled."
+msgstr ""
+
+msgid "Import stopped. Check the iPhone connection and destination."
+msgstr ""
+
+msgid "Could not open the destination folder."
 msgstr ""
 
