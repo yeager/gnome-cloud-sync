@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+[Desktop Entry]
+Type=Application
+Name=Ubuntu Cloud Sync
+Comment=Set up and monitor cloud folders
+Comment[sv]=Konfigurera och övervaka molnmappar
+Exec=ubuntu-cloud-sync
+Icon=folder-remote
+Terminal=false
+Categories=Utility;FileTools;

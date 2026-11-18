@@ -1,0 +1,216 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Swedish translations for Ubuntu Cloud Sync.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the Ubuntu Cloud Sync
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ubuntu Cloud Sync 0.3.2\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-18 07:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: sv\n"
+"Language-Team: sv <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+msgid "Sign in"
+msgstr "Logga in"
+
+msgid "Cancel sign-in"
+msgstr "Avbryt inloggningen"
+
+msgid "Start sync"
+msgstr "Starta synkronisering"
+
+msgid "Pause"
+msgstr "Pausa"
+
+msgid "Open folder"
+msgstr "Öppna mapp"
+
+msgid "Cloud folder name, e.g. Ubuntu Sync Test"
+msgstr "Molnmappens namn, till exempel Ubuntu synktest"
+
+msgid "Files added here sync in both directions. Deletions can sync too."
+msgstr ""
+"Filer som läggs till här synkroniseras i båda riktningarna. Borttagningar"
+" kan också synkroniseras."
+
+msgid ""
+"Configure rclone, then enter the name of a dedicated cloud folder. Put an"
+" empty RCLONE_TEST file and one disposable test file in it before "
+"starting."
+msgstr ""
+"Konfigurera rclone och ange sedan namnet på en separat molnmapp. Lägg en "
+"tom fil med namnet RCLONE_TEST och en testfil som du kan avvara i mappen "
+"innan du börjar."
+
+msgid "Configure rclone remote"
+msgstr "Konfigurera molnanslutning i rclone"
+
+msgid "Request sent to systemd."
+msgstr "Begäran har skickats till systemd."
+
+msgid "Service command failed. See the user service journal."
+msgstr "Tjänstkommandot misslyckades. Läs användartjänstens logg."
+
+msgid "Signed in. Select Start sync when ready."
+msgstr "Du är inloggad. Välj Starta synkronisering när du är redo."
+
+#, python-brace-format
+msgid "Install {engine} to enable this provider."
+msgstr "Installera {engine} för att aktivera den här leverantören."
+
+#, python-brace-format
+msgid "Create a remote named {provider} in the terminal."
+msgstr "Skapa en molnanslutning med namnet {provider} i terminalen."
+
+msgid "Waiting for Microsoft sign-in…"
+msgstr "Väntar på inloggning hos Microsoft…"
+
+msgid "Microsoft account connected."
+msgstr "Microsoft-kontot har anslutits."
+
+msgid "Microsoft sign-in failed. Start a fresh sign-in and retry."
+msgstr ""
+"Det gick inte att logga in hos Microsoft. Starta en ny inloggning och "
+"försök igen."
+
+msgid "Use a regular local Cloud Sync folder."
+msgstr "Använd en vanlig lokal mapp för molnsynkronisering."
+
+msgid "Initial setup requires an empty local folder."
+msgstr "Du behöver en tom lokal mapp för den första konfigurationen."
+
+msgid "Enter one top-level cloud folder name."
+msgstr "Ange namnet på en mapp direkt under molnlagringens rot."
+
+#, python-brace-format
+msgid "Create a {backend} remote named {provider} first."
+msgstr "Skapa först en molnanslutning av typen {backend} med namnet {provider}."
+
+msgid "Starting sync…"
+msgstr "Startar synkroniseringen…"
+
+msgid "Pausing sync…"
+msgstr "Pausar synkroniseringen…"
+
+msgid "Pausing scheduled sync. Any active pass will finish."
+msgstr "Pausar schemalagd synkronisering. En pågående körning får slutföras."
+
+msgid "Complete setup to start syncing."
+msgstr "Slutför konfigurationen för att börja synkronisera."
+
+msgid "Sync folder is missing or has been replaced."
+msgstr "Synkroniseringsmappen saknas eller har ersatts."
+
+msgid "Syncing with OneDrive…"
+msgstr "Synkroniserar med OneDrive…"
+
+#, python-brace-format
+msgid "OneDrive needs attention ({result})."
+msgstr "OneDrive behöver åtgärdas ({result})."
+
+#, python-brace-format
+msgid "Last successful sync: {timestamp}"
+msgstr "Senast slutförda synkronisering: {timestamp}"
+
+msgid "Waiting for first sync."
+msgstr "Väntar på den första synkroniseringen."
+
+msgid "The last sync was interrupted."
+msgstr "Den senaste synkroniseringen avbröts."
+
+msgid "Cloud Sync Status"
+msgstr "Status för molnsynkronisering"
+
+msgid "Open Ubuntu Cloud Sync"
+msgstr "Öppna Ubuntu Cloud Sync"
+
+msgid "The configured local folder is missing."
+msgstr "Den valda lokala mappen saknas."
+
+msgid "The configured local folder was replaced."
+msgstr "Den valda lokala mappen har ersatts."
+
+msgid "Starting the OneDrive monitor…"
+msgstr "Startar övervakningen av OneDrive…"
+
+msgid "Some OneDrive transfers failed. See the service journal."
+msgstr "Vissa OneDrive-överföringar misslyckades. Läs tjänstens logg."
+
+msgid "OneDrive stopped with an error. See the service journal."
+msgstr "OneDrive stoppades på grund av ett fel. Läs tjänstens logg."
+
+msgid "OneDrive monitor stopped."
+msgstr "Övervakningen av OneDrive har stoppats."
+
+msgid "Initial sync was interrupted. Review the journal before recovering."
+msgstr ""
+"Den första synkroniseringen avbröts. Läs loggen innan du återställer "
+"synkroniseringen."
+
+msgid "Initial sync requires an empty local folder."
+msgstr "Den första synkroniseringen kräver en tom lokal mapp."
+
+msgid "Add RCLONE_TEST and a test file to the selected remote folder."
+msgstr "Lägg RCLONE_TEST och en testfil i den valda molnmappen."
+
+msgid "Syncing…"
+msgstr "Synkroniserar…"
+
+msgid "Sync interrupted."
+msgstr "Synkroniseringen avbröts."
+
+msgid "Sync failed. See the service journal."
+msgstr "Synkroniseringen misslyckades. Läs tjänstens logg."
+
+msgid "Set up and monitor cloud folders"
+msgstr "Konfigurera och övervaka molnmappar"
+
+msgid "partial failure"
+msgstr "vissa överföringar misslyckades"
+
+msgid "service unreachable"
+msgstr "tjänsten kan inte nås"
+
+msgid "time unsafe"
+msgstr "systemklockan är felinställd"
+
+msgid "interrupted"
+msgstr "avbruten"
+
+msgid "never run"
+msgstr "har aldrig körts"
+
+msgid "unknown"
+msgstr "okänt fel"
+
+msgid ""
+"Sign in with Microsoft in your browser. Return here when sign-in is "
+"complete."
+msgstr ""
+"Logga in med Microsoft i webbläsaren. Återvänd hit när inloggningen är "
+"klar."
+
+msgid ""
+"GNOME Online Accounts opens cloud files in Files. Local sync uses its own"
+" sign-in."
+msgstr ""
+"GNOME Nätkonton öppnar molnfiler i Filer. Lokal synkronisering använder "
+"en separat inloggning."
+
+msgid "Browse cloud files"
+msgstr "Bläddra bland molnfiler"
+
+msgid "Online Accounts settings"
+msgstr "Inställningar för nätkonton"
+

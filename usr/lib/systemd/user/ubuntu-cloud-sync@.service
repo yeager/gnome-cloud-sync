@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+[Unit]
+Description=Ubuntu Cloud Sync (%i)
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/python3 /usr/lib/ubuntu-cloud-sync/worker.py %i
+UMask=0077
+
+[Install]
+WantedBy=default.target

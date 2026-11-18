@@ -1,0 +1,201 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Translations template for Ubuntu Cloud Sync.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the Ubuntu Cloud Sync
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Ubuntu Cloud Sync 0.3.2\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-18 07:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+msgid "Sign in"
+msgstr ""
+
+msgid "Cancel sign-in"
+msgstr ""
+
+msgid "Start sync"
+msgstr ""
+
+msgid "Pause"
+msgstr ""
+
+msgid "Open folder"
+msgstr ""
+
+msgid "Cloud folder name, e.g. Ubuntu Sync Test"
+msgstr ""
+
+msgid "Files added here sync in both directions. Deletions can sync too."
+msgstr ""
+
+msgid ""
+"Configure rclone, then enter the name of a dedicated cloud folder. Put an"
+" empty RCLONE_TEST file and one disposable test file in it before "
+"starting."
+msgstr ""
+
+msgid "Configure rclone remote"
+msgstr ""
+
+msgid "Request sent to systemd."
+msgstr ""
+
+msgid "Service command failed. See the user service journal."
+msgstr ""
+
+msgid "Signed in. Select Start sync when ready."
+msgstr ""
+
+#, python-brace-format
+msgid "Install {engine} to enable this provider."
+msgstr ""
+
+#, python-brace-format
+msgid "Create a remote named {provider} in the terminal."
+msgstr ""
+
+msgid "Waiting for Microsoft sign-in…"
+msgstr ""
+
+msgid "Microsoft account connected."
+msgstr ""
+
+msgid "Microsoft sign-in failed. Start a fresh sign-in and retry."
+msgstr ""
+
+msgid "Use a regular local Cloud Sync folder."
+msgstr ""
+
+msgid "Initial setup requires an empty local folder."
+msgstr ""
+
+msgid "Enter one top-level cloud folder name."
+msgstr ""
+
+#, python-brace-format
+msgid "Create a {backend} remote named {provider} first."
+msgstr ""
+
+msgid "Starting sync…"
+msgstr ""
+
+msgid "Pausing sync…"
+msgstr ""
+
+msgid "Pausing scheduled sync. Any active pass will finish."
+msgstr ""
+
+msgid "Complete setup to start syncing."
+msgstr ""
+
+msgid "Sync folder is missing or has been replaced."
+msgstr ""
+
+msgid "Syncing with OneDrive…"
+msgstr ""
+
+#, python-brace-format
+msgid "OneDrive needs attention ({result})."
+msgstr ""
+
+#, python-brace-format
+msgid "Last successful sync: {timestamp}"
+msgstr ""
+
+msgid "Waiting for first sync."
+msgstr ""
+
+msgid "The last sync was interrupted."
+msgstr ""
+
+msgid "Cloud Sync Status"
+msgstr ""
+
+msgid "Open Ubuntu Cloud Sync"
+msgstr ""
+
+msgid "The configured local folder is missing."
+msgstr ""
+
+msgid "The configured local folder was replaced."
+msgstr ""
+
+msgid "Starting the OneDrive monitor…"
+msgstr ""
+
+msgid "Some OneDrive transfers failed. See the service journal."
+msgstr ""
+
+msgid "OneDrive stopped with an error. See the service journal."
+msgstr ""
+
+msgid "OneDrive monitor stopped."
+msgstr ""
+
+msgid "Initial sync was interrupted. Review the journal before recovering."
+msgstr ""
+
+msgid "Initial sync requires an empty local folder."
+msgstr ""
+
+msgid "Add RCLONE_TEST and a test file to the selected remote folder."
+msgstr ""
+
+msgid "Syncing…"
+msgstr ""
+
+msgid "Sync interrupted."
+msgstr ""
+
+msgid "Sync failed. See the service journal."
+msgstr ""
+
+msgid "Set up and monitor cloud folders"
+msgstr ""
+
+msgid "partial failure"
+msgstr ""
+
+msgid "service unreachable"
+msgstr ""
+
+msgid "time unsafe"
+msgstr ""
+
+msgid "interrupted"
+msgstr ""
+
+msgid "never run"
+msgstr ""
+
+msgid "unknown"
+msgstr ""
+
+msgid ""
+"Sign in with Microsoft in your browser. Return here when sign-in is "
+"complete."
+msgstr ""
+
+msgid ""
+"GNOME Online Accounts opens cloud files in Files. Local sync uses its own"
+" sign-in."
+msgstr ""
+
+msgid "Browse cloud files"
+msgstr ""
+
+msgid "Online Accounts settings"
+msgstr ""
+

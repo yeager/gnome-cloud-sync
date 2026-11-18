@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+[Unit]
+Description=Run Ubuntu Cloud Sync periodically (%i)
+
+[Timer]
+OnActiveSec=5min
+OnUnitInactiveSec=5min
+
+[Install]
+WantedBy=timers.target
