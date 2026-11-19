@@ -14,7 +14,7 @@ Build the package with `./build-package.sh .` (requires `gettext` and `dpkg-deb`
 From the directory with the package:
 
 ```sh
-sudo apt install ./ubuntu-cloud-sync_0.4.2_all.deb
+sudo apt install ./ubuntu-cloud-sync_0.4.3_all.deb
 nautilus -q
 ubuntu-cloud-sync
 ```

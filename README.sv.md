@@ -11,7 +11,7 @@ Bygg paketet med `./build-package.sh .` (kräver `gettext` och `dpkg-deb`).
 Kör följande i mappen där installationspaketet finns.
 
 ```sh
-sudo apt install ./ubuntu-cloud-sync_0.4.2_all.deb
+sudo apt install ./ubuntu-cloud-sync_0.4.3_all.deb
 nautilus -q
 ubuntu-cloud-sync
 ```
